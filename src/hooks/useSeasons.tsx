@@ -1,4 +1,4 @@
-import { getSeasonsService } from "../../services/SeasonsService";
+import { getSeasonsService } from "../services/SeasonsService";
 
 export default function useSeasons() {
   const getSeasons = async () => {

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import "./DriverCard.css";
-import useDrivers from "../hooks/useDrivers";
+import useDrivers from "../../hooks/useDrivers";
 import { Driver } from "../types/Driver";
 import AddFavoriteButton from "../addFavoriteButton/AddFavoriteButton";
-import useSeasons from "../hooks/useSeasons";
 
 const DriverCard = () => {
   const [drivers, setDrivers] = useState<Driver[]>([]);
@@ -11,7 +10,7 @@ const DriverCard = () => {
 
   useEffect(() => {
     async function fetchDrivers() {
-      const response = await getDrivers(2023);
+      // const response = await getDrivers(2023);
       setDrivers(response);
     }
     fetchDrivers();

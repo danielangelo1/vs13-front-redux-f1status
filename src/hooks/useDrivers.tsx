@@ -1,4 +1,4 @@
-import { getDriversService } from "../../services/DriversService";
+import { getDriversService } from "../services/DriversService";
 
 export default function useDrivers() {
   const getDrivers = async (season: number) => {
