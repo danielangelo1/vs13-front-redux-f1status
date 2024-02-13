@@ -1,4 +1,4 @@
-import { Team } from "../types/Team";
+import { Team } from "../../types/Team";
 import "./TeamsCard.css";
 
 interface TeamsCardProps {
@@ -10,15 +10,13 @@ const TeamsCard = ({ teams }: TeamsCardProps) => {
     <>
       <ul className="teams-container">
         {teams.map((team) => (
-          <li key={team.id} className="team-card">
-            <img src={team.logo} alt="Logo da equipe" className="team-logo" />
-            <p>{team.name}</p>
-            <p>{team.base}</p>
-            <p>Entrada na F1: {team.first_team_entry}</p>
-            <p>Campeonatos mundiais: {team.world_championships}</p>
-            <p>Pole positions: {team.pole_positions}</p>
-            <p>Voltas mais rápida: {team.fastest_laps}</p>
-            <p>Diretor: {team.director}</p>
+          <li key={team.team.id} className="team-card">
+            <div className="team-position">{team.position}</div>
+            <div className="team-logo">
+              <img src={team.team.logo} alt={team.team.name} />
+            </div>
+            <div className="team-name">{team.team.name}</div>
+            <div className="team-points">{team.points} pontos</div>
           </li>
         ))}
       </ul>

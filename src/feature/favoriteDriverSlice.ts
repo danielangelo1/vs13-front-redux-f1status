@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Driver } from "../components/types/Driver";
+import { Driver } from "../types/Driver";
 
 interface FavoriteDriverState {
   favoriteDrivers: Driver[];

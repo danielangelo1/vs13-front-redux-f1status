@@ -1,5 +1,5 @@
 import { FlagCheckered } from "@phosphor-icons/react";
-import { Driver } from "../types/Driver";
+import { Driver } from "../../types/Driver";
 import "./AddFavoriteButton.module.css";
 import { useDispatch } from "react-redux";
 import { addFavoriteDriver } from "../../feature/favoriteDriverSlice";

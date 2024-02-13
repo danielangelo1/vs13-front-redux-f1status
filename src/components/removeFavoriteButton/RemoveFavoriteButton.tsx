@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { Driver } from "../types/Driver";
+import { Driver } from "../../types/Driver";
 import { removeFavoriteDriver } from "../../feature/favoriteDriverSlice";
 import { toast } from "react-toastify";
 

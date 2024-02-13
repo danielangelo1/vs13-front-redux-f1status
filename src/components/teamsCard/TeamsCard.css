@@ -1,0 +1,47 @@
+.teams-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 4rem;
+}
+
+.teams-container li {
+  list-style: none;
+}
+
+.teams-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: 200px;
+  height: 300px;
+}
+
+.team-position {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.team-logo img {
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+  object-fit: cover;
+}
+
+.team-points {
+  margin: 5px;
+  font-size: 20px;
+}
+
+.team-name {
+  margin: 5px;
+  font-size: 20px;
+}

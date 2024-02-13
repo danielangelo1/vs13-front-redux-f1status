@@ -1,5 +1,5 @@
 import "./DriverCard.css";
-import { Driver } from "../types/Driver";
+import { Driver } from "../../types/Driver";
 import AddFavoriteButton from "../addFavoriteButton/AddFavoriteButton";
 import RemoveFavoriteButton from "../removeFavoriteButton/RemoveFavoriteButton";
 

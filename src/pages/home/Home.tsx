@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import DriverCard from "../../components/driverCard/DriverCard";
-import { Driver } from "../../components/types/Driver";
+import { Driver } from "../../types/Driver";
 import useDrivers from "../../hooks/useDrivers";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

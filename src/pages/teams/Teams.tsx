@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Team } from "../../components/types/Team";
+import { Team } from "../../types/Team";
 import TeamsCard from "../../components/teamsCard/TeamsCard";
 import useTeams from "../../hooks/useTeams";
 import { useAppSelector } from "../../feature/hooks/Hooks";
@@ -15,7 +15,7 @@ const Teams = () => {
       setTeams(response);
     }
     // fetchTeams();
-  }, []);
+  }, [season]);
   return (
     <>
       <TeamsCard teams={teams} />
