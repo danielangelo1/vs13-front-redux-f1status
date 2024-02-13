@@ -4,6 +4,7 @@ import NotFound from "../pages/notFound/NotFound";
 
 import LayoutDefault from "../layouts/LayoutDefault";
 import FavoriteDrivers from "../pages/favoriteDrivers/FavoriteDrivers";
+import Teams from "../pages/teams/Teams";
 
 const Router = () => {
   return (
@@ -11,8 +12,9 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<LayoutDefault />}>
           <Route path="/" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
           <Route path="/favoriteDriver" element={<FavoriteDrivers />} />
+          <Route path="/teams" element={<Teams />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

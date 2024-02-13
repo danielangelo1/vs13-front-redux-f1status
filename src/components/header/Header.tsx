@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { useDispatch } from "react-redux";
 import { changeSeason } from "../../feature/seasonSlice";
-import useSeasons from "../../hooks/useSeasons";
-import { useEffect } from "react";
 
 const Header = () => {
   const dispatch = useDispatch();
