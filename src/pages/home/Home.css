@@ -1,0 +1,11 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section p {
+  font-size: 1.275em;
+  font-weight: 600;
+}
