@@ -7,8 +7,9 @@ const Header = () => {
       <nav>
         <Link to="/">F1 Status</Link>
         <div>
-          <Link to="/">Drivers</Link>
-          <Link to="/teams">Teams</Link>
+          <Link to="/">Pilotos</Link>
+          <Link to="/teams">Equipes</Link>
+          <Link to="/favoriteDriver">Meus Pilotos </Link>
         </div>
       </nav>
     </header>

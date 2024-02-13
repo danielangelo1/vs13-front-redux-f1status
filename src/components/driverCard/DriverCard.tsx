@@ -1,21 +1,13 @@
-import { useEffect, useState } from "react";
 import "./DriverCard.css";
-import useDrivers from "../../hooks/useDrivers";
 import { Driver } from "../types/Driver";
 import AddFavoriteButton from "../addFavoriteButton/AddFavoriteButton";
 
-const DriverCard = () => {
-  const [drivers, setDrivers] = useState<Driver[]>([]);
-  const { getDrivers } = useDrivers();
+interface DriverCardProps {
+  drivers: Driver[];
+  isFavorite?: boolean;
+}
 
-  useEffect(() => {
-    async function fetchDrivers() {
-      // const response = await getDrivers(2023);
-      setDrivers(response);
-    }
-    fetchDrivers();
-  }, []);
-
+const DriverCard = ({ drivers, isFavorite }: DriverCardProps) => {
   return (
     <>
       <ul className="driver-container">
@@ -31,7 +23,7 @@ const DriverCard = () => {
               {driver.driver.name} <span>{driver.driver.number}</span>
             </p>
             <p>{driver.team.name}</p>
-            <AddFavoriteButton driver={driver} />
+            {!isFavorite && <AddFavoriteButton driver={driver} />}
           </li>
         ))}
       </ul>
