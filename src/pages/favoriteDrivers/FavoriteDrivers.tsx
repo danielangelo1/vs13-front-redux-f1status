@@ -1,6 +1,6 @@
-import React from "react";
 import { useAppSelector } from "../../feature/hooks/Hooks";
 import DriverCard from "../../components/driverCard/DriverCard";
+import { ToastContainer } from "react-toastify";
 
 const FavoriteDrivers = () => {
   const drivers = useAppSelector(
@@ -8,6 +8,7 @@ const FavoriteDrivers = () => {
   );
   return (
     <>
+      <ToastContainer />
       {drivers.length > 0 ? (
         <DriverCard drivers={drivers} isFavorite={true} />
       ) : (

@@ -1,6 +1,7 @@
 import "./DriverCard.css";
 import { Driver } from "../types/Driver";
 import AddFavoriteButton from "../addFavoriteButton/AddFavoriteButton";
+import RemoveFavoriteButton from "../removeFavoriteButton/RemoveFavoriteButton";
 
 interface DriverCardProps {
   drivers: Driver[];
@@ -24,6 +25,7 @@ const DriverCard = ({ drivers, isFavorite }: DriverCardProps) => {
             </p>
             <p>{driver.team.name}</p>
             {!isFavorite && <AddFavoriteButton driver={driver} />}
+            {isFavorite && <RemoveFavoriteButton driver={driver} />}
           </li>
         ))}
       </ul>

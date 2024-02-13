@@ -14,7 +14,7 @@ const Home = () => {
       const response = await getDrivers(2023);
       setDrivers(response);
     }
-    // fetchDrivers();
+    fetchDrivers();
   }, []);
 
   return (
