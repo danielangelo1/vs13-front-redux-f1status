@@ -3,7 +3,7 @@ import { Driver } from "../../types/Driver";
 import "./AddFavoriteButton.module.css";
 import { useDispatch } from "react-redux";
 import { addFavoriteDriver } from "../../feature/favoriteDriverSlice";
-import { toast } from "react-toastify";
+
 import { Team } from "../../types/Team";
 import { addFavoriteTeam } from "../../feature/favoriteTeamSlice";
 
@@ -15,17 +15,19 @@ interface AddFavoriteButtonProps {
 const AddFavoriteButton = ({ driver, team }: AddFavoriteButtonProps) => {
   const dispatch = useDispatch();
 
+  const addDriver = (driver: Driver) => {
+    dispatch(addFavoriteDriver(driver));
+  };
+
+  const addTeam = (team: Team) => {
+    dispatch(addFavoriteTeam(team));
+  };
+
   const handleAddFavorite = () => {
     if (driver) {
-      dispatch(addFavoriteDriver(driver));
-      toast.success(`Piloto ${driver.driver.name} adicionado aos favoritos`, {
-        autoClose: 300,
-      });
+      addDriver(driver);
     } else if (team) {
-      dispatch(addFavoriteTeam(team));
-      toast.success(`Equipe ${team.team.name} adicionado aos favoritos`, {
-        autoClose: 300,
-      });
+      addTeam(team);
     }
   };
 
