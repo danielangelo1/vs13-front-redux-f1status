@@ -6,6 +6,7 @@
   margin-top: 20px;
   gap: 2rem;
   margin-bottom: 4rem;
+  margin-top: 5rem;
 }
 
 .teams-container li {
@@ -44,7 +45,4 @@
 .team-name {
   margin: 5px;
   font-size: 20px;
-}
-
-.teams-container button {
 }
