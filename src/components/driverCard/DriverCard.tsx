@@ -23,6 +23,7 @@ const DriverCard = ({ drivers, isFavorite }: DriverCardProps) => {
             <p>
               {driver.driver.name} <span>{driver.driver.number}</span>
             </p>
+            <p>Pontos: {driver.points}</p>
             <p>{driver.team.name}</p>
             {!isFavorite && <AddFavoriteButton driver={driver} />}
             {isFavorite && <RemoveFavoriteButton driver={driver} />}

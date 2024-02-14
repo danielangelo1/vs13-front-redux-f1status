@@ -32,7 +32,7 @@ const Header = () => {
             <option value="2011">2011</option>
           </select>
 
-          <Link to="/">Pilotos</Link>
+          <Link to="/drivers">Pilotos</Link>
           <Link to="/teams">Equipes</Link>
           <Link to="/favorites">Favoritos</Link>
         </div>
