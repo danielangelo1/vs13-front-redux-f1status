@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../pages/home/Home";
+import Drivers from "../pages/drivers/Drivers";
 import NotFound from "../pages/notFound/NotFound";
 
 import LayoutDefault from "../layouts/LayoutDefault";
-import FavoriteDrivers from "../pages/favoriteDrivers/FavoriteDrivers";
+import Favorites from "../pages/favorites/Favorites";
 import Teams from "../pages/teams/Teams";
 
 const Router = () => {
@@ -11,8 +11,8 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LayoutDefault />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/favoriteDriver" element={<FavoriteDrivers />} />
+          <Route path="/" element={<Drivers />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="*" element={<NotFound />} />
         </Route>

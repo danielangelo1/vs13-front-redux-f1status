@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAppSelector } from "../../feature/hooks/Hooks";
 import "./Home.css";
 
-const Home = () => {
+const Drivers = () => {
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const season = useAppSelector((state) => state.season.season);
   const { getDrivers } = useDrivers();
@@ -44,4 +44,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Drivers;
