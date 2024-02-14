@@ -5,13 +5,14 @@
   align-items: center;
   margin-top: 20px;
   gap: 4rem;
+  margin-bottom: 4rem;
 }
 
 .teams-container li {
   list-style: none;
 }
 
-.teams-card {
+.team-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,8 +21,7 @@
   padding: 10px;
   border: 1px solid #000;
   border-radius: 10px;
-  width: 200px;
-  height: 300px;
+  width: 340px;
 }
 
 .team-position {
@@ -44,4 +44,7 @@
 .team-name {
   margin: 5px;
   font-size: 20px;
+}
+
+.teams-container button {
 }

@@ -29,13 +29,9 @@ const AddFavoriteButton = ({ driver, team }: AddFavoriteButtonProps) => {
     }
   };
 
-  const buttonText = driver
-    ? "Adicionar piloto aos favoritos"
-    : "Adicionar equipe aos favoritos";
-
   return (
     <button type="button" onClick={handleAddFavorite}>
-      {buttonText} <FlagCheckered />
+      Adicionar aos favoritos <FlagCheckered />
     </button>
   );
 };

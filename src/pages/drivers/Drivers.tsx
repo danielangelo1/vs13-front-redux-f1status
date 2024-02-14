@@ -17,7 +17,7 @@ const Drivers = () => {
       const response = await getDrivers(season);
       setDrivers(response);
     }
-    // fetchDrivers();
+    fetchDrivers();
   }, [season]);
 
   return (
