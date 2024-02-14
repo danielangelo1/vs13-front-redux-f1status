@@ -3,6 +3,7 @@ import DriverCard from "../../components/driverCard/DriverCard";
 import { ToastContainer } from "react-toastify";
 import TeamsCard from "../../components/teamsCard/TeamsCard";
 import "./Favorites.css";
+import ClearFavoriteButton from "../../components/clearFavoriteButton/ClearFavoriteButton";
 
 const Favorites = () => {
   const drivers = useAppSelector(
@@ -15,6 +16,8 @@ const Favorites = () => {
       <ToastContainer />
       <main>
         <section>
+          {drivers.length > 0 && <ClearFavoriteButton />}
+
           <h2>Pilotos Favoritos</h2>
 
           {drivers.length > 0 ? (

@@ -47,10 +47,13 @@ const favoriteTeamSlice = createSlice({
         },
       );
     },
+    clearFavoriteTeams(state) {
+      state.favoriteTeams = [];
+    },
   },
 });
 
-export const { addFavoriteTeam, removeFavoriteTeam } =
+export const { addFavoriteTeam, removeFavoriteTeam, clearFavoriteTeams } =
   favoriteTeamSlice.actions;
 
 export default favoriteTeamSlice.reducer;

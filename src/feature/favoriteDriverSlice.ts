@@ -47,10 +47,13 @@ const favoriteDriverSlice = createSlice({
         },
       );
     },
+    clearFavoriteDrivers(state) {
+      state.favoriteDrivers = [];
+    },
   },
 });
 
-export const { addFavoriteDriver, removeFavoriteDriver } =
+export const { addFavoriteDriver, removeFavoriteDriver, clearFavoriteDrivers } =
   favoriteDriverSlice.actions;
 
 export default favoriteDriverSlice.reducer;

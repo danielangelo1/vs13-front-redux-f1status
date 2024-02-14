@@ -14,7 +14,7 @@ const TeamsCard = ({ teams, isFavorite }: TeamsCardProps) => {
       <ul className="teams-container">
         {teams.map((team) => (
           <li key={team.team.id} className="team-card">
-            <p className="team-position">{team.position}</p>
+            <p className="team-position">Posição: {team.position}</p>
             <div className="team-logo">
               <img src={team.team.logo} alt={team.team.name} />
             </div>
