@@ -6,6 +6,7 @@ import LayoutDefault from "../layouts/LayoutDefault";
 import Favorites from "../pages/favorites/Favorites";
 import Teams from "../pages/teams/Teams";
 import Home from "../pages/home/Home";
+import CreateUser from "../pages/createUser/CreateUser";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
           <Route path="/teams" element={<Teams />} />
           <Route path="*" element={<NotFound />} />
         </Route>
+        <Route path="/create-user" element={<CreateUser />} />
       </Routes>
     </BrowserRouter>
   );

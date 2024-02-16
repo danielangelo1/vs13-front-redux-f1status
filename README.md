@@ -21,3 +21,11 @@ As informações são obtidas através da API [API FORMULA 1](https://api-sports
 - Redux
 - Redux Toolkit
 - Axios
+
+## Instalação
+
+´´´bash
+
+# Clone o repositório
+
+$ git clone
