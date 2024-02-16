@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { postUser } from "../../services/slices/reqresSlice";
 import "./UserComponent.css";
 import { RootState } from "../../feature/store/Store";
+import { useNavigate } from "react-router-dom";
 
 const UserComponent = () => {
   const dispatch = useDispatch<any>();
   const [name, setName] = React.useState("");
   const [job, setJob] = React.useState("");
+  const navigate = useNavigate();
 
   const loading = useSelector((state: RootState) => state.reqres.loading);
   const error = useSelector((state: RootState) => state.reqres.error);
@@ -15,10 +17,12 @@ const UserComponent = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await dispatch(postUser({ name, job }));
+    navigate("/home");
   };
   return (
     <div>
       <form onSubmit={handleSubmit} className="create-user-form">
+        <h2>Crie um usuário</h2>
         <label htmlFor="name">Nome</label>
         <input
           type="text"

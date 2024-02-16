@@ -1,6 +1,8 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { User } from "../../types/User";
 
+import { Login } from "../../types/Login";
+
 interface ReqresState {
   users: User[];
   loading: boolean;
@@ -23,6 +25,20 @@ export const postUser = createAsyncThunk("reqres/post", async (user: User) => {
   });
   return response.json();
 });
+
+export const postLogin = createAsyncThunk(
+  "reqres/login",
+  async (login: Login) => {
+    const response = await fetch("https://reqres.in/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(login),
+    });
+    return response.json();
+  },
+);
 
 const reqresSlice = createSlice({
   name: "reqres",
