@@ -31,7 +31,6 @@ const Header = () => {
             <option value="2012">2012</option>
             <option value="2011">2011</option>
           </select>
-
           <Link to="/drivers">Pilotos</Link>
           <Link to="/teams">Equipes</Link>
           <Link to="/favorites">Favoritos</Link>
