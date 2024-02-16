@@ -27,16 +27,20 @@ export const postUser = createAsyncThunk("reqres/post", async (user: User) => {
 });
 
 export const postLogin = createAsyncThunk(
-  "reqres/login",
+  "reqres/register",
   async (login: Login) => {
-    const response = await fetch("https://reqres.in/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(login),
-    });
-    return response.json();
+    try {
+      const response = await fetch("https://reqres.in/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(login),
+      });
+      return response.json();
+    } catch (e) {
+      console.log(e);
+    }
   },
 );
 
@@ -61,6 +65,18 @@ const reqresSlice = createSlice({
       alert("Usuário criado com sucesso");
     });
     builder.addCase(postUser.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message ?? "Um erro ocorreu";
+    });
+    builder.addCase(postLogin.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(postLogin.fulfilled, (state, action) => {
+      state.loading = false;
+      console.log(action.payload, postLogin);
+      alert("Registro efetuado com sucesso");
+    });
+    builder.addCase(postLogin.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message ?? "Um erro ocorreu";
     });

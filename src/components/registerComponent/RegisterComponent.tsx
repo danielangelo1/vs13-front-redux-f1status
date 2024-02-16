@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { postLogin } from "../../services/slices/reqresSlice";
 import { RootState } from "../../feature/store/Store";
+import "./RegisterComponent.css";
 
 const RegisterComponent = () => {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = React.useState("eve.holt@reqres.in");
+  const [password, setPassword] = React.useState("pistol");
   const dispatch = useDispatch<any>();
   const navigate = useNavigate();
 
@@ -15,14 +16,16 @@ const RegisterComponent = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await dispatch(postLogin({ email, password }));
-    navigate("/home");
+    const response = await dispatch(postLogin({ email, password }));
+    if (postLogin.fulfilled.match(response)) {
+      navigate("/home");
+    }
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
+      <form onSubmit={handleSubmit} className="register-form">
+        <h2>Registro</h2>
         <label htmlFor="email">Email</label>
         <input
           type="text"

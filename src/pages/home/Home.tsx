@@ -1,10 +1,12 @@
+import { useAppSelector } from "../../feature/hooks/Hooks";
 import "./Home.css";
 
 const Home = () => {
+  const name = useAppSelector((state) => state.reqres.users[0].name);
   return (
     <div className="home-container">
       <h2>
-        Seja bem-vindo a <span>F1 Status</span>
+        {name}, Seja bem-vindo <span>F1 Status</span>
       </h2>
       <div className="text">
         <p>
