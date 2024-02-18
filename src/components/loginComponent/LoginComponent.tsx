@@ -1,15 +1,13 @@
-import { useRegisterMutation } from "../../services/reqresApi";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Login } from "../../types/Login";
 import { LoginSchema } from "../../schemas/LoginSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
-import "./RegisterComponent.css";
+import { useLoginMutation } from "../../services/reqresApi";
 import { Link, useNavigate } from "react-router-dom";
 
-const RegisterComponent = () => {
-  const [registerUser, { error, isLoading }] = useRegisterMutation();
+const LoginComponent = () => {
+  const [loginUser, { error, isLoading }] = useLoginMutation();
   const navigate = useNavigate();
-
   const {
     register,
     formState: { errors },
@@ -23,18 +21,17 @@ const RegisterComponent = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<Login> = (data: Login) => {
-    registerUser(data);
+  const onSubmit = (data: Login) => {
+    loginUser(data);
     if (error) {
       console.log(error);
     }
-    navigate("/login");
+    navigate("/home");
   };
-
   return (
     <div className="register-container">
+      <h2>Login</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="form-container">
-        <h2>Cadastro</h2>
         <label>Email</label>
         <input type="email" {...register("email")} />
         <p>{errors.email?.message}</p>
@@ -42,17 +39,16 @@ const RegisterComponent = () => {
         <input type="password" {...register("password")} />
         <p>{errors.password?.message}</p>
         <button type="submit" disabled={isLoading}>
-          {isLoading ? "Carregando..." : "Cadastrar"}
+          {isLoading ? "Carregando..." : "Entrar"}
         </button>
       </form>
-      <p>Já possui conta?</p>
-      <Link to="/login">Faça login</Link>
+      <p>Não possui conta?</p>
+      <Link to="/">Cadastre-se</Link>
       <span>
-        A API não está permitindo cadastrar novos usuários :( Use o valor
-        default fornecido para realizar o registro com sucesso
+        Use o valor default fornecido para realizar o login com sucesso
       </span>
     </div>
   );
 };
 
-export default RegisterComponent;
+export default LoginComponent;

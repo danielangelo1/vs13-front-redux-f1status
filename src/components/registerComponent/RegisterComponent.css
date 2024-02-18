@@ -1,4 +1,4 @@
-.register-form {
+.register-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,13 +6,40 @@
   margin-top: 20px;
 }
 
-.register-form label {
+.register-container p {
   margin-top: 10px;
 }
 
-.register-form input {
+.register-container a {
+  margin: 10px;
+  color: blue;
+  text-decoration: none;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-container label {
+  margin-top: 10px;
+}
+
+.form-container input {
   margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
+}
+
+.form-container p {
+  margin-top: 10px;
+  color: red;
 }

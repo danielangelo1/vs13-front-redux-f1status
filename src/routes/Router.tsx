@@ -6,15 +6,15 @@ import LayoutDefault from "../layouts/LayoutDefault";
 import Favorites from "../pages/favorites/Favorites";
 import Teams from "../pages/teams/Teams";
 import Home from "../pages/home/Home";
-import CreateUser from "../pages/createUser/CreateUser";
 import Register from "../pages/register/Register";
+import Login from "../pages/login/Login";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Register />} />
-        <Route path="/create-user" element={<CreateUser />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<LayoutDefault />}>
           <Route path="/home" element={<Home />} />
           <Route path="/drivers" element={<Drivers />} />
