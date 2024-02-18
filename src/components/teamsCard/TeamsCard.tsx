@@ -20,6 +20,9 @@ const TeamsCard = ({ teams, isFavorite }: TeamsCardProps) => {
             </div>
             <p className="team-name">{team.team.name}</p>
             <span className="team-points">{team.points} pontos</span>
+            {isFavorite && (
+              <span className="team-season">Temporada: {team.season}</span>
+            )}
             {!isFavorite && <AddFavoriteButton team={team} />}
             {isFavorite && <RemoveFavoriteButton team={team} />}
           </li>

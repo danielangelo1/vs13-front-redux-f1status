@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <Link to="/">F1 Status</Link>
+        <Link to="/home">F1 Status</Link>
         <div>
           <select onChange={handleChangeSeason}>
             <option value="2024">2024</option>

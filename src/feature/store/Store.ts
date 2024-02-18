@@ -3,11 +3,9 @@ import favoriteDriverReducer from "../favoriteDriverSlice";
 import seasonReducer from "../seasonSlice";
 import favoriteTeamReducer from "../favoriteTeamSlice";
 import { reqresApi } from "../../services/reqresApi";
-import reqresReducer from "../../services/slices/reqresSlice";
 
 export const store = configureStore({
   reducer: {
-    reqres: reqresReducer,
     favoriteDriver: favoriteDriverReducer,
     season: seasonReducer,
     favoriteTeam: favoriteTeamReducer,

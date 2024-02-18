@@ -13,4 +13,5 @@ export type Driver = {
   };
   position: number;
   points: number;
+  season: number;
 };
